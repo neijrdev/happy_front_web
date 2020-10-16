@@ -15,9 +15,16 @@ const MapIcon = Leaflet.icon({
   popupAnchor: [170, 2]
 })
 
+interface Orphanage {
+  id: number,
+  latitude: number,
+  longitude: number,
+  name: string
+}
+
 export default function OrphanagesMap() {
 
-  const [orphanages, setOrphanages] = useState([])
+  const [orphanages, setOrphanages] = useState<Orphanage[]>([])
 
   useEffect(()=>{
     async function loadOrphanges(){
@@ -46,7 +53,7 @@ export default function OrphanagesMap() {
          <span>Bahia</span>
        </footer>
      </aside>
-      
+
      <Map
       center={[-17.539985,-39.7446446]}
       zoom={15}
@@ -57,6 +64,7 @@ export default function OrphanagesMap() {
 
         {orphanages.map(orphanage=>(
           <Marker
+          key={orphanage.id}
           icon={MapIcon}
           position={[orphanage.latitude,orphanage.longitude]}
           >

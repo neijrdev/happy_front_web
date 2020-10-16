@@ -32,6 +32,13 @@ form.create-orphanage-form {
   overflow: hidden;
 }
 
+
+form.create-orphanage-form .leaflet-container {
+  margin-bottom: 40px;
+  border: 1px solid #d3e2e5;
+  border-radius: 20px;
+}
+
 form.create-orphanage-form fieldset {
   border: 0;
 }
@@ -52,6 +59,7 @@ form.create-orphanage-form fieldset legend {
   margin-bottom: 40px;
   padding-bottom: 24px;
 }
+
 
 form.create-orphanage-form .input-block + .input-block {
   margin-top: 24px;
@@ -94,13 +102,64 @@ form.create-orphanage-form .input-block textarea {
   line-height: 28px;
 }
 
-form.create-orphanage-form .input-block .new-image {
+
+form.create-orphanage-form .input-block .images-container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
+}
+
+form.create-orphanage-form .input-block .images-container .image-content{
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+form.create-orphanage-form .input-block .images-container .image-content img{
   width: 100%;
-  height: 64px;
+  height: 100%;
+  border-radius: 20px;
+}
+
+form.create-orphanage-form .input-block .images-container .image-content .delete_image{
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 36px;
+  height: 36px;
+  background:rgba(255, 255, 255, 0.8);
+  border: 2px solid #D3E2E5;
+  box-sizing: border-box;
+  border-radius: 0px 20px;
+  color: #FF669D;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+form.create-orphanage-form .input-block .new-image {
+  width: 96px;
+  height: 96px;
   background: #F5F8FA;
   border: 1px dashed #96D2F0;
   border-radius: 20px;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.create-orphanage-form .input-block input[type=file] {
+  display: none;
 }
 
 form.create-orphanage-form .input-block .button-select {
